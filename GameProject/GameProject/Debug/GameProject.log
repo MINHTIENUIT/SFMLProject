@@ -1,3 +1,1 @@
-﻿  GameProject.cpp
-d:\mario\sfmlproject\gameproject\gameproject\gameproject.cpp(19): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-  GameProject.vcxproj -> D:\Mario\SFMLProject\GameProject\Debug\GameProject.exe
+﻿

@@ -2,10 +2,11 @@
 #include "Platform.h"
 
 
-Platform::Platform(sf::Texture* texture, sf::Vector2f size, sf::Vector2f position)
+Platform::Platform(sf::Texture texture, sf::Vector2f size, sf::Vector2f position)
 {
+	mTexture = new sf::Texture(texture);
 	body.setSize(size);
-	body.setTexture(texture);
+	body.setTexture(mTexture);
 	body.setPosition(position);
 	body.setOrigin(size / 2.0f);
 }

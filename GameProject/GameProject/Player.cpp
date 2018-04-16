@@ -11,7 +11,7 @@ Player::Player(sf::Texture * texture, sf::Vector2u imageCount, float switchTime,
 	faceRight = true;
 	body.setSize(sf::Vector2f(100.0f, 100.0f));
 	body.setOrigin(body.getSize() / 2.0f);
-	body.setPosition(206.0f, 206.0f);
+	body.setPosition(200.0f, 430.0f);
 	body.setTexture(texture);
 }
 
@@ -28,16 +28,12 @@ void Player::Update(float deltaTime)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 		movement.x += speed * deltaTime;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-		movement.y -= speed * deltaTime;
-	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-		movement.y += speed * deltaTime;
-	}
 
 	if (movement.x == 0.0f)
 	{
+		animation.setTexture(sf::Vector2u(0.0f, 0.0f), sf::Vector2u(0.0f, 0.0f));
 		row = 0;
+		animation.update(deltaTime, faceRight);
 	}
 	else {
 		row = 1;
@@ -47,8 +43,9 @@ void Player::Update(float deltaTime)
 		else {
 			faceRight = false;
 		}
+		animation.update(1,deltaTime, faceRight);
 	}
-	animation.update(row, deltaTime, faceRight);
+	
 	body.setTextureRect(animation.uvRect);
 	body.move(movement);
 

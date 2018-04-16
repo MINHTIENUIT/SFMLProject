@@ -4,7 +4,7 @@
 class Platform
 {
 public:
-	Platform(sf::Texture* texture, sf::Vector2f size, sf::Vector2f position);
+	Platform(sf::Texture texture, sf::Vector2f size, sf::Vector2f position);
 	~Platform();
 	void Draw(sf::RenderWindow& window) {
 		window.draw(body);
@@ -14,5 +14,5 @@ public:
 	};
 private:
 	sf::RectangleShape body;
+	sf::Texture* mTexture;
 };
-
