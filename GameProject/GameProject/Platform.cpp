@@ -2,16 +2,28 @@
 #include "Platform.h"
 
 
-Platform::Platform(sf::Texture texture, sf::Vector2f size, sf::Vector2f position)
+Platform::Platform(sf::Texture texture, sf::Vector2f size,bool hasCheckCollider)
 {
 	mTexture = new sf::Texture(texture);
 	body.setSize(size);
 	body.setTexture(mTexture);
-	body.setPosition(position);
 	body.setOrigin(size / 2.0f);
+	this->hasCheckCollider = hasCheckCollider;
 }
+
+void Platform::setPosition(sf::Vector2f position)
+{
+	body.setPosition(position);
+}
+
+
 
 
 Platform::~Platform()
 {
+}
+
+bool Platform::getHasCollider()
+{
+	return hasCheckCollider;
 }

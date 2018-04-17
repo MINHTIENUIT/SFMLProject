@@ -4,21 +4,19 @@
 #include <iostream>
 #include "Platform.h"
 #include "Player.h"
-#include <string>
-#include <sstream>
+#include "StaticObject.h"
 class Map
 {
 public:
 	Map();
-	 void loadmap();
-	 void checkColider(Player & player);
+	void checkColider(Player & player);
 	 void draw(sf::RenderWindow &window);
+	 void loadMap(Player &player);
+	 
 	~Map();
+	
 private:
-	sf::IntRect getRect(std::string s);
-	sf::Vector2f convertVector(std::string s);
-	std::vector<std::string> split(const std::string &s, char delim);
-private:
+	StaticObject objects;
 	std::vector<Platform> list;	
 };
 

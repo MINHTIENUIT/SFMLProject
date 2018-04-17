@@ -11,7 +11,7 @@ public:
 	};
 
 
-	bool CheckCollision(Collider other, float push);
+	bool CheckCollision(Collider other,sf::Vector2f& direction, float push);
 	sf::Vector2f GetPosition() {
 		return body.getPosition();
 	}
