@@ -20,9 +20,9 @@ bool Collider::CheckCollision(Collider other,sf::Vector2f & direction, float pus
 	sf::Vector2f thisHalfSize = GetHalfSize();
 
 	float deltaX = otherPosition.x - thisPosition.x;
-	float deltaY = otherPosition.y+30 - thisPosition.y;
+	float deltaY = otherPosition.y - thisPosition.y;
 
-	float intersectX = abs(deltaX) - (otherHalfSize.x + thisHalfSize.x)+10;
+	float intersectX = abs(deltaX) - (otherHalfSize.x + thisHalfSize.x);
 	float intersectY = abs(deltaY) - (otherHalfSize.y + thisHalfSize.y);
 
 	if (intersectX < 0.0f && intersectY < 0.0f)

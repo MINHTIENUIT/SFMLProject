@@ -17,6 +17,7 @@ public:
 	Collider GetCollider() { return Collider(body); };
 
 	bool isLive();
+	void setLive(bool live);
 	
 private:
 	bool live = true;

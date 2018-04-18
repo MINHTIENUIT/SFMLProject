@@ -1,12 +1,12 @@
 A
 A
-A                                                                         A 
-A           C                                                            AAA      
-A           A                                       CCCC                AAAAA           
-A       A  AAA  A        A                       A  AAAA  A             A A A           
-A                       AA                                              AA AA      
-A D                    AAA  A   B   A  A       B    D                   EA AA       
-AAAAAAAAAAAAAAAAAAAAAAAAAA    AAAAA        AA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+A    
+A       a   aaa
+A       A   AAA   A
+A                     A      A
+A                     A      A                                               
+A D                   A   b  A                                            
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 - A: Brick
 - B: Ong
 - C: Coin

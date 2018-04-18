@@ -12,7 +12,7 @@ Player::Player(sf::Texture * texture, sf::Vector2u imageCount, float switchTime,
 	faceRight = true;
 	body.setSize(sf::Vector2f(100.0f, 100.0f));
 	body.setOrigin(body.getSize() / 2.0f);
-	body.setPosition(600.0f, 385.0f);
+	body.setPosition(600.0f, 400.0f);
 	body.setTexture(texture);
 }
 
@@ -74,7 +74,7 @@ void Player::OnCollision(sf::Vector2f direction)
 	}
 	else if (direction.x > 0.0f)
 	{
-		//Collision on the left
+		//Collision on the right
 		velocity.x = 0.0f;
 	}
 
@@ -102,4 +102,9 @@ bool Player::isLive()
 		live = false;
 	};
 	return live;
+}
+
+void Player::setLive(bool live)
+{
+	this->live = live;
 }

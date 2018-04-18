@@ -4,19 +4,22 @@
 #include <iostream>
 #include "Platform.h"
 #include "Player.h"
-#include "StaticObject.h"
+#include "Object.h"
+#include "DynamicObject.h"
 class Map
 {
 public:
 	Map();
 	void checkColider(Player & player);
-	 void draw(sf::RenderWindow &window);
+	 void draw(sf::RenderWindow &window, Player &player);
 	 void loadMap(Player &player);
 	 
 	~Map();
 	
 private:
-	StaticObject objects;
-	std::vector<Platform> list;	
+	Object* objects = new Object("images/map.png");
+
+	std::vector<DynamicObject> dynamicObjects;
+	std::vector<Platform> platforms;	
 };
 
