@@ -1,12 +1,18 @@
-﻿  Boss.cpp
+﻿  stdafx.cpp
+  Animation.cpp
+  AnimationObject.cpp
+  Boss.cpp
   Coin.cpp
+  collider.cpp
   DynamicObject.cpp
   GameProject.cpp
-d:\mario\sfmlproject\gameproject\gameproject\gameproject.cpp(23): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
   Map.cpp
-d:\mario\sfmlproject\gameproject\gameproject\map.cpp(24): warning C4018: '<': signed/unsigned mismatch
-d:\mario\sfmlproject\gameproject\gameproject\map.cpp(63): warning C4018: '<': signed/unsigned mismatch
-d:\mario\sfmlproject\gameproject\gameproject\map.cpp(65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Mushroom.cpp
+  Platform.cpp
+  Player.cpp
+f:\hoc tap\university\game\sfmlproject\gameproject\gameproject\player.cpp(44): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
   Object.cpp
+  Princess.cpp
+  Turtle.cpp
   Generating Code...
-  GameProject.vcxproj -> D:\Mario\SFMLProject\GameProject\Debug\GameProject.exe
+  GameProject.vcxproj -> F:\hoc tap\University\Game\SFMLProject\GameProject\Debug\GameProject.exe

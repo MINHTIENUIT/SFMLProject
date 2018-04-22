@@ -11,15 +11,15 @@ class Map
 public:
 	Map();
 	void checkColider(Player & player);
-	 void draw(sf::RenderWindow &window, Player &player);
-	 void loadMap(Player &player);
+	void update(float deltaTime);
+	void draw(sf::RenderWindow &window, Player &player);
+	void loadMap(Player &player);
 	 
 	~Map();
 	
 private:
 	Object* objects = new Object("images/map.png");
 
-	std::vector<DynamicObject> dynamicObjects;
+	std::vector<DynamicObject*> dynamicObjects;
 	std::vector<Platform> platforms;	
 };
-

@@ -1,14 +1,20 @@
-A
-A
-A    
-A       a   aaa
-A       A   AAA   A
-A                     A      A
-A                     A      A                                               
-A D                   A   b  A                                            
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+          a                  aa    
+          A             AA   AA   AA                                                   
+                 aaa                                   aaa              A        A A A 
+         aaa                                                           AA        AAAAA  
+    AA   AAA   AA   AAAA                     aaaa      AAA            AAA        A A A
+                       A             A                               AAAA        AAAAA
+    C          aaaa    A          c  A       d  d      aaa   A     bAAAAA       eD A A
+  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  AABAAAAAABAA  AAA   AAAAAAAAAAAAAAAAAAAAAAAAA
 - A: Brick
 - B: Ong
-- C: Coin
-- D: Direct
-- E: Door
+- C: Direct
+- D: Door
+
+
+- a: Coin
+- b: Boss
+- c: Turtle
+- d: Mushroom
+- e: Princess

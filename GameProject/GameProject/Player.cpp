@@ -63,19 +63,34 @@ void Player::Update(float deltaTime)
 
 void Player::Draw(sf::RenderWindow & window)
 {
+	sf::Text pointString;
+	sf::Font font;
+	if (!font.loadFromFile("arial.ttf"))
+	{
+		// error...
+	}
+	pointString.setCharacterSize(30);
+	pointString.setStyle(sf::Text::Bold);
+	pointString.setFont(font);
+	std::string endString = "Point: "+ std::to_string(point);
+	pointString.setString(endString);
+	pointString.setPosition(window.getView().getCenter().x - window.getSize().x/2, 50);
+	window.draw(pointString);
 	window.draw(body);
 }
 
-void Player::OnCollision(sf::Vector2f direction)
+int Player::OnCollision(sf::Vector2f direction)
 {
 	if (direction.x < 0.0f) {
 		//Collision on the left.
 		velocity.x = 0.0f;
+		return 1;
 	}
 	else if (direction.x > 0.0f)
 	{
 		//Collision on the right
 		velocity.x = 0.0f;
+		return 2;
 	}
 
 	if (direction.y > 0.0f)
@@ -83,12 +98,15 @@ void Player::OnCollision(sf::Vector2f direction)
 		//Collision on ther bottom.
 		velocity.y = 0.0f;
 		canJump = true;
+		return 3;
 	}
 	else if (direction.y < 0.0f)
 	{
 		//Collision on ther top;
 		velocity.y = 0.0f;
+		return 4;
 	}
+	return 0;
 }
 
 sf::Vector2f Player::GetPostion()

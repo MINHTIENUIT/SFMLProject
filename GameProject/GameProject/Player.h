@@ -1,7 +1,13 @@
 #pragma once
 #include <SFML\Graphics.hpp>
+#include <thread>
+#include <mutex>
 #include "Animation.h"
 #include "Collider.h"
+
+#define synchronized(m) \
+    for(std::unique_lock<std::recursive_mutex> lk(m); lk; lk.unlock());
+
 class Player
 {
 public:
@@ -10,7 +16,7 @@ public:
 
 	void Update(float deltaTime);
 	void Draw(sf::RenderWindow& window);
-	void OnCollision(sf::Vector2f direction);
+	int OnCollision(sf::Vector2f direction);
 
 	sf::Vector2f GetPostion();
 
@@ -18,6 +24,17 @@ public:
 
 	bool isLive();
 	void setLive(bool live);
+
+	int getPoint() {
+		return point;
+	}
+
+	void setPoint(int point) {
+		std::recursive_mutex mutex;
+		synchronized(mutex) {
+			this->point = point;
+		}		
+	}
 	
 private:
 	bool live = true;
@@ -29,4 +46,5 @@ private:
 	sf::Vector2f velocity;
 	bool canJump;
 	float jumpHeight;
+	int point = 0;
 };

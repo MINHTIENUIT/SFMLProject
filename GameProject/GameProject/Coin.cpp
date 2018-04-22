@@ -3,6 +3,20 @@
 
 
 
+Coin::Coin(const Coin& coin)
+{
+	this->mTexture = coin.mTexture;
+	this->body = coin.body;
+	this->switchTime = coin.switchTime;
+	this->speed = coin.speed;
+	this->totalTime = coin.totalTime;
+	this->animation = coin.animation;
+	this->coutFrame = coin.coutFrame;
+	this->type = coin.type;
+	this->hasCheckCollider = coin.hasCheckCollider;
+	this->velocity = coin.velocity;
+}
+
 void Coin::addAnimation()
 {
 	animation.setSpriteSheet(mTexture);
@@ -26,25 +40,22 @@ void Coin::update(float deltaTime)
 		totalTime = 0;
 	}
 
-	velocity.y += 981.0f*deltaTime;
+	//velocity.y += 981.0f*deltaTime;
 	body.setTextureRect(animation.getFrame(coutFrame));
 	body.move(velocity*deltaTime);
 }
 
 void Coin::draw(sf::RenderWindow & window, Player & player)
 {
-
 	sf::Vector2f direction(0.0f, 0.0f);
 	if (hasCheckCollider) {
 		if (player.GetCollider()
 			.CheckCollision(getCollider(), direction, 0)) {
 			hasCheckCollider = false;
+			player.setPoint(player.getPoint() + 200);
 		}
-	}	
-	if (hasCheckCollider) {
 		window.draw(body);
 	}
-	
 }
 
 

@@ -16,7 +16,7 @@ public:
 	};
 	bool getHasCollider();
 private:
+	sf::Texture* mTexture;
 	bool hasCheckCollider;
 	sf::RectangleShape body;
-	sf::Texture* mTexture;
 };

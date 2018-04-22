@@ -1,8 +1,8 @@
 #include "stdafx.h"
 #include "Platform.h"
+#include <iostream>
 
-
-Platform::Platform(sf::Texture texture, sf::Vector2f size,bool hasCheckCollider)
+Platform::Platform(sf::Texture texture, sf::Vector2f size, bool hasCheckCollider)
 {
 	mTexture = new sf::Texture(texture);
 	body.setSize(size);
@@ -13,7 +13,7 @@ Platform::Platform(sf::Texture texture, sf::Vector2f size,bool hasCheckCollider)
 
 void Platform::setPosition(sf::Vector2f position)
 {
-	body.setPosition(position);
+	body.setPosition(position);	
 }
 
 

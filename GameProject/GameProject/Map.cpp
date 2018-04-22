@@ -21,14 +21,21 @@ void Map::checkColider(Player & player)
 			{
 				player.OnCollision(direction1);
 			}
-			for (int j = 0; j < dynamicObjects.size(); j++) {
+			for (unsigned int j = 0; j < dynamicObjects.size(); j++) {
 				sf::Vector2f direction2;
-				if (dynamicObjects.at(j).getCollider().CheckCollision((*it).GetCollider(), direction2, 0))
+				if (dynamicObjects.at(j)->getCollider().CheckCollision((*it).GetCollider(), direction2, 0))
 				{
-					dynamicObjects.at(j).onCollider(direction2);
+					dynamicObjects.at(j)->onCollider(direction2);
 				}
 			}
 		}
+	}
+}
+
+void Map::update(float deltaTime)
+{
+	for (unsigned int j = 0; j < dynamicObjects.size(); j++) {
+		dynamicObjects[j]->update(deltaTime);
 	}
 }
 
@@ -40,9 +47,9 @@ void Map::draw(sf::RenderWindow & window,Player &player)
 	{
 		(*it).Draw(window);
 	}
-	for (std::vector<DynamicObject>::iterator it = dynamicObjects.begin(); it != dynamicObjects.end(); it++)
+	for (std::vector<DynamicObject*>::iterator it = dynamicObjects.begin(); it != dynamicObjects.end(); it++)
 	{
-		(*it).draw(window,player);
+		(*it)->draw(window, player);
 	}
 }
 
@@ -60,16 +67,16 @@ void Map::loadMap(Player & player)
 	int j = 0;
 	while (std::getline(map, line)) {		
 		if (j < 9) {
-			for (int i = 0; i < line.length(); i++)
+			for (unsigned int i = 0; i < line.length(); i++)
 			{
-				sf::Vector2f pos(i * 50, j * 50 + 30);
-				if (line[i] < 91 && line[i]>64) {
+				sf::Vector2f pos(float(i * 50), float(j * 50 + 30));
+				if (line[i] < 91 && line[i]>64) {					
 					int at = line[i] - 65;					
-					platforms.push_back(objects->getPlatform(at,pos));
+					platforms.push_back(objects->getPlatform(at,pos));					
 				}
-				if (line[i] <122 && line[i] > 96) {
+				if (line[i] <122 && line[i] > 96) {					
 					int at = line[i] - 97;
-					dynamicObjects.push_back(objects->getDynamicObject(at, pos));
+					objects->getDynamicObject(dynamicObjects, at, pos);
 				};
 			}
 		}

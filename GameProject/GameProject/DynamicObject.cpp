@@ -2,7 +2,11 @@
 #include "DynamicObject.h"
 
 
-DynamicObject::DynamicObject(sf::Texture * texture, sf::Vector2f size, float switchTime, float speed)
+DynamicObject::DynamicObject()
+{
+}
+
+DynamicObject::DynamicObject(sf::Texture * texture, sf::Vector2f size, float switchTime, float speed, int t)
 {
 	mTexture = *texture;
 	this->switchTime = switchTime;
@@ -14,10 +18,11 @@ DynamicObject::DynamicObject(sf::Texture * texture, sf::Vector2f size, float swi
 	body.setTexture(&mTexture);
 	animation.setSpriteSheet(mTexture);
 	hasCheckCollider = true;
+	type = t;
 }
 
 
-void DynamicObject::setPosition(sf::Vector2f pos)
+void DynamicObject::setPosition(sf::Vector2f &pos)
 {
 	body.setPosition(pos);
 }
@@ -26,9 +31,13 @@ Collider DynamicObject::getCollider() {
 	return Collider(body);
 };
 
-void DynamicObject::draw(sf::RenderWindow & window,Player &player)
-{
-	window.draw(body);
+//void DynamicObject::draw(sf::RenderWindow & window,Player &player)
+//{
+//	window.draw(body);
+//}
+
+bool DynamicObject::isHasCheckCollider() {
+	return hasCheckCollider;
 }
 
 DynamicObject::~DynamicObject()

@@ -14,7 +14,6 @@ void AnimationObject::setSpriteSheet(sf::Texture & texture)
 
 sf::IntRect AnimationObject::getFrame(int i)
 {
-
 	return mFrames[i];
 }
 
