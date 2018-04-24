@@ -1,12 +1,12 @@
-
-          a                  aa    
+                                                                              aaaa
+          a                  aa                                             AAAAAAAA
           A             AA   AA   AA                                                   
-                 aaa                                   aaa              A        A A A 
-         aaa                                                           AA        AAAAA  
-    AA   AAA   AA   AAAA                     aaaa      AAA            AAA        A A A
-                       A             A                               AAAA        AAAAA
-    C          aaaa    A          c  A       d  d      aaa   A     bAAAAA       eD A A
-  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  AABAAAAAABAA  AAA   AAAAAAAAAAAAAAAAAAAAAAAAA
+                 aaa                                   aaa              A                A A A 
+         aaa                                                           AA                AAAAA  
+    AA   AAA   AA   fffA  fffAfffA           aaaa      AAA            AAA                A A A
+                       A             A                               AAAA                AAAAA
+    C          aaaa    A          c  A       d  d      aaa   A     bAAAAA               eD A A
+  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  AABAAAAAABAA  AAA   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 - A: Brick
 - B: Ong
 - C: Direct
@@ -18,3 +18,4 @@
 - c: Turtle
 - d: Mushroom
 - e: Princess
+- f: Brick

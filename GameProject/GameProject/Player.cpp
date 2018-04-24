@@ -24,10 +24,10 @@ void Player::Update(float deltaTime)
 {
 	velocity.x *= 0.0f;
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) && live) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) && live) {
 		velocity.x -= speed;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) && live) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && live) {
 		velocity.x += speed;
 	}
 

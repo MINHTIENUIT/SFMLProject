@@ -57,10 +57,13 @@
     <ClInclude Include="Turtle.h">
       <Filter>Enemy</Filter>
     </ClInclude>
-    <ClInclude Include="Mushroom.h">
+    <ClInclude Include="Princess.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Princess.h">
+    <ClInclude Include="Mushroom.h">
+      <Filter>Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Brick.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -104,10 +107,13 @@
     <ClCompile Include="Turtle.cpp">
       <Filter>Enemy</Filter>
     </ClCompile>
-    <ClCompile Include="Mushroom.cpp">
+    <ClCompile Include="Princess.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Princess.cpp">
+    <ClCompile Include="Mushroom.cpp">
+      <Filter>Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Brick.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

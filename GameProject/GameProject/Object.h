@@ -10,6 +10,7 @@
 #include "Turtle.h"
 #include "Mushroom.h"
 #include "Princess.h"
+#include "Brick.h"
 class Object
 {
 public:

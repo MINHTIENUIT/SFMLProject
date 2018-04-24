@@ -52,6 +52,9 @@ void Object::loadDynamic()
 
 	//5-Princess
 	dynamics.push_back((new Princess(&texture, sf::Vector2f(50, 100), 0.4f, 50.0f, 5)));
+
+	//6-Brick
+	dynamics.push_back((new Brick(&texture, sf::Vector2f(50, 50), 0.4f, 50.0f, 6)));
 }
 
 Platform Object::getPlatform(int at, sf::Vector2f pos)
@@ -79,6 +82,9 @@ void Object::getDynamicObject(std::vector<DynamicObject*>& dObjects, int at, sf:
 		break;
 	case 5:
 		tmp = new Princess(*dynamic_cast<Princess*>(dynamics.at(at)));
+		break;
+	case 6:
+		tmp = new Brick(*dynamic_cast<Brick*>(dynamics.at(at)));
 		break;
 	default:
 		break;

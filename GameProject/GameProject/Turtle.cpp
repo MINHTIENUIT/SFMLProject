@@ -38,7 +38,7 @@ void Turtle::update(float deltaTime)
 	velocity.y += 981.0f*deltaTime;
 
 	
-	if (live == false) {
+	if (!live) {
 		coutFrame = 2;		
 		body.setSize(sf::Vector2f(50.0f, 50.0f));
 		body.setOrigin(body.getSize() / 2.0f);
@@ -60,15 +60,17 @@ void Turtle::draw(sf::RenderWindow & window, Player & player)
 	sf::Vector2f direction(0.0f, 0.0f);
 	if (hasCheckCollider) {
 		if (player.GetCollider().CheckCollision(getCollider(), direction, 0)) {
-			int check = player.OnCollision(direction);
-			if (check == 1 || check == 2)
-				player.setLive(false);
-			else {
+			int checkCollision = player.OnCollision(direction);
+			if (checkCollision == 3 || checkCollision == 4) {
 				live = false;
-				//hasCheckCollider = false;
+			}
+			else {
+				player.setLive(false);
 			}
 		}		
 	}
+	if (!player.isLive())
+		hasCheckCollider = false;
 	window.draw(body);
 }
 
